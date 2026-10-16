@@ -7,4 +7,7 @@
     <string name="label_first_name">Nama Pemesan</string>
     <string name="label_last_name">Nama Tim</string>
     <string name="label_email">Email Konfirmasi</string>
+
+    <string name="label_dob">Tgl Booking</string>
+    <string name="label_duration">Durasi</string>
 </resources>
