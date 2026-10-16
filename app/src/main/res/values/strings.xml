@@ -26,4 +26,10 @@
     <string name="btn_ok">OK</string>
     <string name="btn_cancel">Batal</string>
 
+    <string name="snackbar_submitted">Pemesanan Lapangan Berhasil!</string>
+    <string name="snackbar_format">Nama: %1$s (%2$s)\nEmail: %3$s\nTgl Booking: %4$s\nDurasi: %5$s\nFasilitas: %6$s</string>
+
+    <string name="desc_header_img">Header Background Lapangan Basket</string>
+    <string name="desc_calendar_icon">Pilih Tanggal Booking</string>
+    <string name="desc_dropdown_icon">Pilih Durasi Sesi</string>
 </resources>
