@@ -146,6 +146,14 @@ fun FormBiodataScreen() {
                 .fillMaxSize()
                 .padding(innerPadding),
         ) {
-            }
+            Image(
+                painter = painterResource(R.drawable.header_basket),
+                contentDescription = stringResource(R.string.desc_header_img),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(R.dimen.header_height)),
+                contentScale = ContentScale.Crop,
+            )
+        }
     }
 }
