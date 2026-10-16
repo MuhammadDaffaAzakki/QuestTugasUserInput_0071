@@ -22,4 +22,8 @@
     <string name="duration_option_3">3 Jam</string>
     <string name="duration_option_4">4 Jam</string>
 
+    <string name="btn_proceed">Pesan Lapangan</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Batal</string>
+
 </resources>
