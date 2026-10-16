@@ -71,4 +71,16 @@ fun FormBiodataScreen() {
     var facilityWasit by remember { mutableStateOf(value = false) }
     var facilityRompi by remember { mutableStateOf(value = false) }
 
+    val durationOptions = listOf(
+        stringResource(R.string.duration_option_1),
+        stringResource(R.string.duration_option_2),
+        stringResource(R.string.duration_option_3),
+        stringResource(R.string.duration_option_4),
+    )
+
+    val facilityBolaText = stringResource(R.string.facility_bola)
+    val facilityWasitText = stringResource(R.string.facility_wasit)
+    val facilityRompiText = stringResource(R.string.facility_rompi)
+    val noFacilityText = stringResource(R.string.no_facility)
+
 }
