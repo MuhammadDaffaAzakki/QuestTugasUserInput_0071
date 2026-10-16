@@ -67,4 +67,8 @@ fun FormBiodataScreen() {
 
     var durationDropdownExpanded by remember { mutableStateOf(value = false) }
 
+    var facilityBola by remember { mutableStateOf(value = false) }
+    var facilityWasit by remember { mutableStateOf(value = false) }
+    var facilityRompi by remember { mutableStateOf(value = false) }
+
 }
