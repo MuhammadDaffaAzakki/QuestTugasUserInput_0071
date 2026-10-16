@@ -17,4 +17,9 @@
     <string name="facility_rompi">Rompi Tim</string>
     <string name="no_facility">Tidak ada</string>
 
+    <string name="duration_option_1">1 Jam</string>
+    <string name="duration_option_2">2 Jam</string>
+    <string name="duration_option_3">3 Jam</string>
+    <string name="duration_option_4">4 Jam</string>
+
 </resources>
