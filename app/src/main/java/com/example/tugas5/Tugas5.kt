@@ -52,3 +52,8 @@ import kotlinx.coroutines.launch
 import java.util.Calendar
 import java.util.Locale
 import kotlin.time.Duration.Companion.seconds
+
+@Composable
+fun FormBiodataScreen() {
+
+}
