@@ -83,4 +83,23 @@ fun FormBiodataScreen() {
     val facilityRompiText = stringResource(R.string.facility_rompi)
     val noFacilityText = stringResource(R.string.no_facility)
 
-}
+    val isFormComplete = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            dob.isNotBlank() &&
+            duration.isNotBlank() &&
+            (facilityBola || facilityWasit || facilityRompi)
+
+    val buttonBgColor = if (isFormComplete) {
+        colorResource(R.color.button_blue_active)
+    } else {
+        colorResource(R.color.button_bg)
+    }
+
+    val buttonTextColor = if (isFormComplete) {
+        colorResource(R.color.button_blue_text)
+    } else {
+        colorResource(R.color.button_text)
+    }
+
+    }
