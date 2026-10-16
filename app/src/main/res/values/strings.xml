@@ -10,4 +10,11 @@
 
     <string name="label_dob">Tgl Booking</string>
     <string name="label_duration">Durasi</string>
+
+    <string name="label_facility_header">Pilih Fasilitas Tambahan Anda :</string>
+    <string name="facility_bola">Sewa Bola</string>
+    <string name="facility_wasit">Wasit</string>
+    <string name="facility_rompi">Rompi Tim</string>
+    <string name="no_facility">Tidak ada</string>
+
 </resources>
