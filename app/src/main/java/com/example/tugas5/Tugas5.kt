@@ -102,4 +102,24 @@ fun FormBiodataScreen() {
         colorResource(R.color.button_text)
     }
 
+    val selectedFacilities = mutableListOf<String>()
+    if (facilityBola) selectedFacilities.add(facilityBolaText)
+    if (facilityWasit) selectedFacilities.add(facilityWasitText)
+    if (facilityRompi) selectedFacilities.add(facilityRompiText)
+
+    val facilitiesResult = if (selectedFacilities.isEmpty()) {
+        noFacilityText
+    } else {
+        selectedFacilities.joinToString(", ")
     }
+
+    val formattedMessage = stringResource(
+        id = R.string.snackbar_format,
+        firstName,
+        lastName,
+        email,
+        dob,
+        duration,
+        facilitiesResult,
+    )
+}
