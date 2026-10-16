@@ -187,6 +187,186 @@ fun FormBiodataScreen() {
                         color = colorResource(R.color.text_subtitle),
                         fontSize = dimensionResource(R.dimen.text_size_subtitle).value.sp,
                     )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                    ) {
+                        OutlinedTextField(
+                            value = firstName,
+                            onValueChange = { firstName = it },
+                            label = { Text(text = stringResource(R.string.label_first_name), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                            shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                            modifier = Modifier.weight(1f),
+                            singleLine = true,
+                        )
+
+                        OutlinedTextField(
+                            value = lastName,
+                            onValueChange = { lastName = it },
+                            label = { Text(text = stringResource(R.string.label_last_name), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                            shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                            modifier = Modifier.weight(1f),
+                            singleLine = true,
+                        )
+                    }
+
+                    OutlinedTextField(
+                        value = email,
+                        onValueChange = { email = it },
+                        label = { Text(text = stringResource(R.string.label_email), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                        shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                        modifier = Modifier.fillMaxWidth(),
+                        singleLine = true,
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                    ) {
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = dob,
+                                onValueChange = {},
+                                readOnly = true,
+                                label = { Text(text = stringResource(R.string.label_dob), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                                trailingIcon = {
+                                    IconButton(onClick = { showDatePickerDialog() }) {
+                                        Image(
+                                            painter = painterResource(R.drawable.calendar),
+                                            contentDescription = stringResource(R.string.desc_calendar_icon),
+                                            modifier = Modifier.size(24.dp),
+                                        )
+                                    }
+                                },
+                                shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                                modifier = Modifier.fillMaxWidth(),
+                                singleLine = true,
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable { showDatePickerDialog() },
+                            )
+                        }
+
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = duration,
+                                onValueChange = {},
+                                readOnly = true,
+                                label = { Text(text = stringResource(R.string.label_duration), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                                trailingIcon = {
+                                    IconButton(onClick = { durationDropdownExpanded = !durationDropdownExpanded }) {
+                                        Image(
+                                            painter = painterResource(R.drawable.arrow_drop),
+                                            contentDescription = stringResource(R.string.desc_dropdown_icon),
+                                            modifier = Modifier.size(24.dp),
+                                        )
+                                    }
+                                },
+                                shape = RoundedCornerShape(dimensionResource(id = R.dimen.button_corner_radius)),
+                                modifier = Modifier.fillMaxWidth(),
+                                singleLine = true,
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable { durationDropdownExpanded = !durationDropdownExpanded },
+                            )
+                            DropdownMenu(
+                                expanded = durationDropdownExpanded,
+                                onDismissRequest = { durationDropdownExpanded = false },
+                            ) {
+                                durationOptions.forEach { option ->
+                                    DropdownMenuItem(
+                                        text = { Text(text = option) },
+                                        onClick = {
+                                            duration = option
+                                            durationDropdownExpanded = false
+                                        },
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    Text(
+                        text = stringResource(R.string.label_facility_header),
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(R.color.text_primary),
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = dimensionResource(R.dimen.text_size_section).value.sp,
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = facilityBola,
+                                onCheckedChange = { facilityBola = it },
+                            )
+                            Text(
+                                text = facilityBolaText,
+                                fontSize = dimensionResource(R.dimen.text_size_checkbox).value.sp,
+                            )
+                        }
+
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = facilityWasit,
+                                onCheckedChange = { facilityWasit = it },
+                            )
+                            Text(
+                                text = facilityWasitText,
+                                fontSize = dimensionResource(R.dimen.text_size_checkbox).value.sp,
+                            )
+                        }
+
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = facilityRompi,
+                                onCheckedChange = { facilityRompi = it },
+                            )
+                            Text(
+                                text = facilityRompiText,
+                                fontSize = dimensionResource(R.dimen.text_size_checkbox).value.sp,
+                            )
+                        }
+                    }
+
+                    Button(
+                        onClick = {
+                            coroutineScope.launch {
+                                val job = launch {
+                                    snackbarHostState.showSnackbar(
+                                        message = formattedMessage,
+                                        duration = SnackbarDuration.Indefinite,
+                                    )
+                                }
+                                delay(5.seconds)
+                                job.cancel()
+                            }
+                        },
+                        shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = buttonBgColor,
+                            contentColor = buttonTextColor,
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.button_height)),
+                    ) {
+                        Text(
+                            text = stringResource(R.string.btn_proceed),
+                            fontWeight = FontWeight.Bold,
+                            color = buttonTextColor,
+                            fontSize = dimensionResource(R.dimen.text_size_body).value.sp,
+                        )
+                    }
                 }
             }
         }
