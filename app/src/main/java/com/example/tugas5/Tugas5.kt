@@ -122,4 +122,19 @@ fun FormBiodataScreen() {
         duration,
         facilitiesResult,
     )
-}
+
+    fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val datePickerDialog = DatePickerDialog(
+            context,
+            { _, year, month, dayOfMonth ->
+                dob = String.format(Locale.getDefault(), "%02d/%02d/%d", dayOfMonth, month + 1, year)
+            },
+            calendar[Calendar.YEAR],
+            calendar[Calendar.MONTH],
+            calendar[Calendar.DAY_OF_MONTH],
+        )
+        datePickerDialog.show()
+    }
+
+    }
