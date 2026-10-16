@@ -3,4 +3,8 @@
 
     <string name="form_title">Form Booking Lapangan</string>
     <string name="form_subtitle">Silahkan isi data pemesanan dibawah ini !!!</string>
+
+    <string name="label_first_name">Nama Pemesan</string>
+    <string name="label_last_name">Nama Tim</string>
+    <string name="label_email">Email Konfirmasi</string>
 </resources>
