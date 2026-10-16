@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+
+    <dimen name="card_corner_radius">28dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="header_height">240dp</dimen>
+    <dimen name="card_offset_top">140dp</dimen>
+    <dimen name="spider_icon_size">100dp</dimen>
+    <dimen name="button_corner_radius">12dp</dimen>
+    <dimen name="button_height">50dp</dimen>
+
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_subtitle">12sp</dimen>
+    <dimen name="text_size_section">14sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_checkbox">13sp</dimen>
+</resources>
