@@ -137,4 +137,15 @@ fun FormBiodataScreen() {
         datePickerDialog.show()
     }
 
+    Scaffold(
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
+        containerColor = colorResource(R.color.scaffold_bg),
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+        ) {
+            }
     }
+}
