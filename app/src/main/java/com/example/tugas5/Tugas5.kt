@@ -55,5 +55,8 @@ import kotlin.time.Duration.Companion.seconds
 
 @Composable
 fun FormBiodataScreen() {
-
+    val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
+    val coroutineScope = rememberCoroutineScope()
+    
 }
