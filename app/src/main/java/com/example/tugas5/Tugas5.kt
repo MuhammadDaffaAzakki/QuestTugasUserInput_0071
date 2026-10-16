@@ -58,5 +58,13 @@ fun FormBiodataScreen() {
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
-    
+
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var dob by remember { mutableStateOf("") }
+    var duration by remember { mutableStateOf("") }
+
+    var durationDropdownExpanded by remember { mutableStateOf(value = false) }
+
 }
