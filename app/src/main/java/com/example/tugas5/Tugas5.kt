@@ -128,7 +128,8 @@ fun FormBiodataScreen() {
         val datePickerDialog = DatePickerDialog(
             context,
             { _, year, month, dayOfMonth ->
-                dob = String.format(Locale.getDefault(), "%02d/%02d/%d", dayOfMonth, month + 1, year)
+                dob =
+                    String.format(Locale.getDefault(), "%02d/%02d/%d", dayOfMonth, month + 1, year)
             },
             calendar[Calendar.YEAR],
             calendar[Calendar.MONTH],
@@ -154,6 +155,30 @@ fun FormBiodataScreen() {
                     .height(dimensionResource(R.dimen.header_height)),
                 contentScale = ContentScale.Crop,
             )
+
+            Card(
+                shape = RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius)),
+                colors = CardDefaults.cardColors(containerColor = colorResource(R.color.card_bg)),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        top = dimensionResource(R.dimen.card_offset_top),
+                        bottom = 20.dp,
+                    )
+                    .align(Alignment.TopCenter),
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
+                        .padding(dimensionResource(R.dimen.padding_large)),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_standard)),
+                ) {
+
+                }
+            }
         }
     }
 }
